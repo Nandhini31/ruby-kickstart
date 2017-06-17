@@ -14,3 +14,8 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(my_array)
+    new_array = my_array.select{|i| i%3 !=0}
+    next_array = new_array.map{|i| i%3}
+
+end
