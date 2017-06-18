@@ -23,14 +23,18 @@
 #
 
 
+
 def hi_hi_goodbye
-  input = ''
-  while input != 'bye'
-    puts "Enter a number"
-    input = gets.chomp
-    print 'hi ' * input.to_i
+  puts "Please enter a number between 1 and 10"
+
+  while number = gets
+    puts 'hi ' * number.to_i
+    break if number.chomp == 'bye'
   end
-  print 'goodbye'
+
+  puts "Goodbye!"
+
+
 
 end
 
