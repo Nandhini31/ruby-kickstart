@@ -7,5 +7,19 @@
 # Examples
 # alternate_words("Lorem ipsum dolor sit amet.")  # => ["Lorem", "dolor", "amet"]
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
-# alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
+# alternate_words("Elementary, my dear Watson")  # => ["Elementary", "dear"]
 
+def alternate_words(new_string)
+  '!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each do |char|
+    new_string = new_string.gsub(char, ' ')
+  end
+  words_array = new_string.split
+
+  new_array = []
+  words_array.each_with_index do|word, index|
+    new_array << word if index.even?
+  end
+  return new_array
+end
+
+#!@$#%^&*()-=_+[]:;,./< >?\|
