@@ -32,24 +32,11 @@
 # end
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def array_init(size = 5,&block)
+  if block
+    my_array = Array.new(size){|item| block.call(item)}
+  else
+    my_array = Array.new(size){|item| (item * 100).to_s}
+  end
+  return my_array
+end
